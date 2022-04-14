@@ -1,0 +1,28 @@
+*{
+    margin: 0 !important; 
+}
+
+#footer{
+    background: rgb(36, 36, 36);
+}
+
+#header{
+    background: rgb(212, 224, 255) !important;
+}
+
+#footer a{
+    text-decoration: none;
+}
+
+#main{
+    height: 70vh;
+}
+#main input{
+     font-size: 12px !important; 
+     border-radius: 0;
+     border-right: 0;
+}
+#main button{
+    font-size: 12px !important; 
+    border-radius: 0;
+}
