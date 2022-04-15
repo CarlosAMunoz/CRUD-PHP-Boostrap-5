@@ -31,7 +31,7 @@
         $notes = $_POST['notes'];
 
 
-        $query = "UPDATE clients set bussines_name = '$bussines_name', name = '$name', phone = '$phone', e_mail = '$e_mail', state = 'state', notes ='$notes' WHERE id = '$id'";
+        $query = "UPDATE clients set bussines_name = '$bussines_name', name = '$name', phone = '$phone', e_mail = '$e_mail', state = '$state', notes ='$notes' WHERE id = '$id'";
         mysqli_query($conn, $query);
 
    
