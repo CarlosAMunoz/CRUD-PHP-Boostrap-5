@@ -3,20 +3,16 @@
 }
 
 #footer{
-    background: rgb(36, 36, 36);
+    background: rgb(37, 37, 37) !important;
 }
-
-#header{
-    background: rgb(212, 224, 255) !important;
-}
-
 #footer a{
     text-decoration: none;
 }
 
-#main{
-    height: 70vh;
+#header{
+    background: #a6c9ff !important;
 }
+
 #main input{
      font-size: 12px !important; 
      border-radius: 0;
@@ -25,4 +21,17 @@
 #main button{
     font-size: 12px !important; 
     border-radius: 0;
+}
+
+#main{
+    min-height: 75vh;
+}
+
+#main table{
+    font-size: 12px;
+}
+
+#main a{
+    width: 40px;
+    height: 20px;
 }
