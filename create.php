@@ -20,6 +20,7 @@ if(isset($_POST['create'])){
     }
 
     $_SESSION['message'] = 'Client saved';
+    $_SESSION['message_type'] = 'success';
 
     header("Location: index.php");
 }

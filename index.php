@@ -4,8 +4,11 @@ include("db.php");
 include("./includes/header.php");
 ?>
 
-    <main id="main">
+
+<main id="main">
         <div class="container mt-5 mx-auto" >
+
+        <!--Formulario   -->
             <form action="create.php" method="POST">
                 <div class="row">
                     <div class="col-2 p-0">
@@ -30,10 +33,14 @@ include("./includes/header.php");
                         <input type="submit" class="btn btn-success" value="Add" name="create"></input>
                     </div>
                 </div>
+            </form>
+
+
+                <!--Alerta  -->
                 <div class="row">
                     <div class="col-2 ps-0">
                         <?php if(isset($_SESSION['message'])){ ?>
-                            <div class="alert alert-success alert-dismissible fade show p-1 mt-2" role="alert">
+                            <div class="alert alert-<?= $_SESSION['message_type'];  ?> alert-dismissible fade show p-1 mt-2" role="alert">
                                  <?= $_SESSION['message']; ?>
                                 <button type="button" class="btn-close m-2 p-0" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
@@ -43,51 +50,16 @@ include("./includes/header.php");
                     </div>
                 </div>
 
+
+                
                 <div class="row"> 
-                    <table class="table table-striped mt-4">
-                        <thead>
-                            <tr>
-                                <th> Bussines Name </th>
-                                <th> Name </th>
-                                <th> Phone </th>
-                                <th> E-mail </th>
-                                <th> State </th>
-                                <th> Notes </th>
-                            </tr>
-                        </thead> 
-                        <tbody>
-                            <?php
-                                $query = "SELECT * FROM clients";
-                                $result_clients = mysqli_query($conn, $query);
+                   <?php
+                    include("./includes/table.php");
+                    ?>
 
-
-                                while($row = mysqli_fetch_array($result_clients)){ ?>
-                                    <tr> 
-                                        <td><?php echo $row['bussines_name'] ?> </td>
-                                        <td><?php echo $row['name'] ?> </td>
-                                        <td><?php echo $row['phone'] ?> </td>
-                                        <td><?php echo $row['e_mail'] ?> </td>
-                                        <td><?php echo $row['state'] ?> </td>
-                                        <td><?php echo $row['notes'] ?> </td>
-                                        <td>
-                                            <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn">
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </a>
-                                            <a href="delete.php?id=<?php echo $row['id'] ?>" class="btn">
-                                                <i class="fa-solid fa-circle-minus"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-        
-                             <?php   } ?>
-
-                        </tbody>
-                            
-
-                    </table>
                 </div>
 
-            </form>
+            
         </div>
         
 
